@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D12E95C20DEACF2008A730C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E95B20DEACF2008A730C /* AppDelegate.swift */; };
+		2D12E95E20DEACF3008A730C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E95D20DEACF3008A730C /* ViewController.swift */; };
+		2D12E96120DEACF3008A730C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D12E95F20DEACF3008A730C /* Main.storyboard */; };
+		2D12E96320DEACF5008A730C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D12E96220DEACF5008A730C /* Assets.xcassets */; };
+		2D12E96620DEACF5008A730C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D12E96420DEACF5008A730C /* LaunchScreen.storyboard */; };
+		2D12E97120DEACF5008A730C /* UberFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E97020DEACF5008A730C /* UberFlickrTests.swift */; };
+		2D12E97C20DEACF5008A730C /* UberFlickrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E97B20DEACF5008A730C /* UberFlickrUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2D12E96D20DEACF5008A730C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D12E95020DEACF2008A730C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D12E95720DEACF2008A730C;
+			remoteInfo = UberFlickr;
+		};
+		2D12E97820DEACF5008A730C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D12E95020DEACF2008A730C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D12E95720DEACF2008A730C;
+			remoteInfo = UberFlickr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2D12E95820DEACF2008A730C /* UberFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D12E95B20DEACF2008A730C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D12E95D20DEACF3008A730C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D12E96020DEACF3008A730C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D12E96220DEACF5008A730C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2D12E96520DEACF5008A730C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2D12E96720DEACF5008A730C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D12E96C20DEACF5008A730C /* UberFlickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UberFlickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D12E97020DEACF5008A730C /* UberFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrTests.swift; sourceTree = "<group>"; };
+		2D12E97220DEACF5008A730C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D12E97720DEACF5008A730C /* UberFlickrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UberFlickrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D12E97B20DEACF5008A730C /* UberFlickrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberFlickrUITests.swift; sourceTree = "<group>"; };
+		2D12E97D20DEACF5008A730C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D12E95520DEACF2008A730C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D12E96920DEACF5008A730C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D12E97420DEACF5008A730C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D12E94F20DEACF2008A730C = {
+			isa = PBXGroup;
+			children = (
+				2D12E95A20DEACF2008A730C /* UberFlickr */,
+				2D12E96F20DEACF5008A730C /* UberFlickrTests */,
+				2D12E97A20DEACF5008A730C /* UberFlickrUITests */,
+				2D12E95920DEACF2008A730C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D12E95920DEACF2008A730C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E95820DEACF2008A730C /* UberFlickr.app */,
+				2D12E96C20DEACF5008A730C /* UberFlickrTests.xctest */,
+				2D12E97720DEACF5008A730C /* UberFlickrUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D12E95A20DEACF2008A730C /* UberFlickr */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E95B20DEACF2008A730C /* AppDelegate.swift */,
+				2D12E95D20DEACF3008A730C /* ViewController.swift */,
+				2D12E95F20DEACF3008A730C /* Main.storyboard */,
+				2D12E96220DEACF5008A730C /* Assets.xcassets */,
+				2D12E96420DEACF5008A730C /* LaunchScreen.storyboard */,
+				2D12E96720DEACF5008A730C /* Info.plist */,
+			);
+			path = UberFlickr;
+			sourceTree = "<group>";
+		};
+		2D12E96F20DEACF5008A730C /* UberFlickrTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E97020DEACF5008A730C /* UberFlickrTests.swift */,
+				2D12E97220DEACF5008A730C /* Info.plist */,
+			);
+			path = UberFlickrTests;
+			sourceTree = "<group>";
+		};
+		2D12E97A20DEACF5008A730C /* UberFlickrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E97B20DEACF5008A730C /* UberFlickrUITests.swift */,
+				2D12E97D20DEACF5008A730C /* Info.plist */,
+			);
+			path = UberFlickrUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D12E95720DEACF2008A730C /* UberFlickr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D12E98020DEACF5008A730C /* Build configuration list for PBXNativeTarget "UberFlickr" */;
+			buildPhases = (
+				2D12E95420DEACF2008A730C /* Sources */,
+				2D12E95520DEACF2008A730C /* Frameworks */,
+				2D12E95620DEACF2008A730C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UberFlickr;
+			productName = UberFlickr;
+			productReference = 2D12E95820DEACF2008A730C /* UberFlickr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D12E96B20DEACF5008A730C /* UberFlickrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D12E98320DEACF5008A730C /* Build configuration list for PBXNativeTarget "UberFlickrTests" */;
+			buildPhases = (
+				2D12E96820DEACF5008A730C /* Sources */,
+				2D12E96920DEACF5008A730C /* Frameworks */,
+				2D12E96A20DEACF5008A730C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D12E96E20DEACF5008A730C /* PBXTargetDependency */,
+			);
+			name = UberFlickrTests;
+			productName = UberFlickrTests;
+			productReference = 2D12E96C20DEACF5008A730C /* UberFlickrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2D12E97620DEACF5008A730C /* UberFlickrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D12E98620DEACF5008A730C /* Build configuration list for PBXNativeTarget "UberFlickrUITests" */;
+			buildPhases = (
+				2D12E97320DEACF5008A730C /* Sources */,
+				2D12E97420DEACF5008A730C /* Frameworks */,
+				2D12E97520DEACF5008A730C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D12E97920DEACF5008A730C /* PBXTargetDependency */,
+			);
+			name = UberFlickrUITests;
+			productName = UberFlickrUITests;
+			productReference = 2D12E97720DEACF5008A730C /* UberFlickrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D12E95020DEACF2008A730C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Nidhi Goyal";
+				TargetAttributes = {
+					2D12E95720DEACF2008A730C = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					2D12E96B20DEACF5008A730C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 2D12E95720DEACF2008A730C;
+					};
+					2D12E97620DEACF5008A730C = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 2D12E95720DEACF2008A730C;
+					};
+				};
+			};
+			buildConfigurationList = 2D12E95320DEACF2008A730C /* Build configuration list for PBXProject "UberFlickr" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D12E94F20DEACF2008A730C;
+			productRefGroup = 2D12E95920DEACF2008A730C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D12E95720DEACF2008A730C /* UberFlickr */,
+				2D12E96B20DEACF5008A730C /* UberFlickrTests */,
+				2D12E97620DEACF5008A730C /* UberFlickrUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D12E95620DEACF2008A730C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D12E96620DEACF5008A730C /* LaunchScreen.storyboard in Resources */,
+				2D12E96320DEACF5008A730C /* Assets.xcassets in Resources */,
+				2D12E96120DEACF3008A730C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D12E96A20DEACF5008A730C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D12E97520DEACF5008A730C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D12E95420DEACF2008A730C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D12E95E20DEACF3008A730C /* ViewController.swift in Sources */,
+				2D12E95C20DEACF2008A730C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D12E96820DEACF5008A730C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D12E97120DEACF5008A730C /* UberFlickrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D12E97320DEACF5008A730C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D12E97C20DEACF5008A730C /* UberFlickrUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2D12E96E20DEACF5008A730C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D12E95720DEACF2008A730C /* UberFlickr */;
+			targetProxy = 2D12E96D20DEACF5008A730C /* PBXContainerItemProxy */;
+		};
+		2D12E97920DEACF5008A730C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D12E95720DEACF2008A730C /* UberFlickr */;
+			targetProxy = 2D12E97820DEACF5008A730C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2D12E95F20DEACF3008A730C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D12E96020DEACF3008A730C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2D12E96420DEACF5008A730C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D12E96520DEACF5008A730C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D12E97E20DEACF5008A730C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2D12E97F20DEACF5008A730C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D12E98120DEACF5008A730C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UberFlickr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ng.UberFlickr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2D12E98220DEACF5008A730C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UberFlickr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ng.UberFlickr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2D12E98420DEACF5008A730C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UberFlickrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ng.UberFlickrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UberFlickr.app/UberFlickr";
+			};
+			name = Debug;
+		};
+		2D12E98520DEACF5008A730C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UberFlickrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ng.UberFlickrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UberFlickr.app/UberFlickr";
+			};
+			name = Release;
+		};
+		2D12E98720DEACF5008A730C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UberFlickrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ng.UberFlickrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UberFlickr;
+			};
+			name = Debug;
+		};
+		2D12E98820DEACF5008A730C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UberFlickrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ng.UberFlickrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UberFlickr;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D12E95320DEACF2008A730C /* Build configuration list for PBXProject "UberFlickr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D12E97E20DEACF5008A730C /* Debug */,
+				2D12E97F20DEACF5008A730C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D12E98020DEACF5008A730C /* Build configuration list for PBXNativeTarget "UberFlickr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D12E98120DEACF5008A730C /* Debug */,
+				2D12E98220DEACF5008A730C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D12E98320DEACF5008A730C /* Build configuration list for PBXNativeTarget "UberFlickrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D12E98420DEACF5008A730C /* Debug */,
+				2D12E98520DEACF5008A730C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D12E98620DEACF5008A730C /* Build configuration list for PBXNativeTarget "UberFlickrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D12E98720DEACF5008A730C /* Debug */,
+				2D12E98820DEACF5008A730C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2D12E95020DEACF2008A730C /* Project object */;
+}
