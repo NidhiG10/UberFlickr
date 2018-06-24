@@ -19,7 +19,7 @@ enum Error: Swift.Error {
     
     case api(APIError)
     enum APIError {
-        case notImage
+        case noImage
     }
 }
 
@@ -33,7 +33,7 @@ extension Error {
             return description
             
             
-        case .api(.notImage):
+        case .api(.noImage):
             return NSLocalizedString("No image.", comment: "Not enought images error message")
             
             

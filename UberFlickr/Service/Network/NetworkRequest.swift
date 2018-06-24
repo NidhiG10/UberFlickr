@@ -20,10 +20,13 @@ struct NetworkRequest {
     
     let method: NetworkRequest.Method
     let url: String
+    let parameters: Parameters?
     
     func buildURLRequest() -> URLRequest {
         var request = URLRequest(url:URL(string: self.url)!)
         request.httpMethod = self.method.rawValue
+        URLParameterEncoder().encode(urlRequest: &request, with: parameters)
         return request
     }
+    
 }

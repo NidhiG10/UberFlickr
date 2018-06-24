@@ -17,6 +17,13 @@
 		2D12E98C20DF78C0008A730C /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E98B20DF78C0008A730C /* NetworkRequest.swift */; };
 		2D12E98E20DF78D7008A730C /* Gateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E98D20DF78D7008A730C /* Gateway.swift */; };
 		2D12E99120DF7AE3008A730C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99020DF7AE3008A730C /* Errors.swift */; };
+		2D12E99420DF7E0F008A730C /* FlickrPhotoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99320DF7E0F008A730C /* FlickrPhotoSearchResult.swift */; };
+		2D12E99620DF7E1D008A730C /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99520DF7E1D008A730C /* FlickrPhoto.swift */; };
+		2D12E99820DF8CC2008A730C /* FlickrPhoto+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99720DF8CC2008A730C /* FlickrPhoto+Mapping.swift */; };
+		2D12E99A20DF8D08008A730C /* FlickrPhotoSearchResult+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99920DF8D08008A730C /* FlickrPhotoSearchResult+Mapping.swift */; };
+		2D12E99D20DF949B008A730C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99C20DF949B008A730C /* API.swift */; };
+		2D12E99F20DF9AB2008A730C /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E99E20DF9AB2008A730C /* URLParameterEncoder.swift */; };
+		2D12E9A220DFA2DF008A730C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E9A120DFA2DF008A730C /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 		2D12E98B20DF78C0008A730C /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		2D12E98D20DF78D7008A730C /* Gateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gateway.swift; sourceTree = "<group>"; };
 		2D12E99020DF7AE3008A730C /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		2D12E99320DF7E0F008A730C /* FlickrPhotoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoSearchResult.swift; sourceTree = "<group>"; };
+		2D12E99520DF7E1D008A730C /* FlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhoto.swift; sourceTree = "<group>"; };
+		2D12E99720DF8CC2008A730C /* FlickrPhoto+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlickrPhoto+Mapping.swift"; sourceTree = "<group>"; };
+		2D12E99920DF8D08008A730C /* FlickrPhotoSearchResult+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlickrPhotoSearchResult+Mapping.swift"; sourceTree = "<group>"; };
+		2D12E99C20DF949B008A730C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2D12E99E20DF9AB2008A730C /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		2D12E9A120DFA2DF008A730C /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,8 @@
 		2D12E95A20DEACF2008A730C /* UberFlickr */ = {
 			isa = PBXGroup;
 			children = (
+				2D12E9A020DFA2D2008A730C /* Extension */,
+				2D12E99220DF7DF6008A730C /* Model */,
 				2D12E98F20DF7AD6008A730C /* Error */,
 				2D12E98920DF7853008A730C /* Service */,
 				2D12E95B20DEACF2008A730C /* AppDelegate.swift */,
@@ -136,6 +152,7 @@
 		2D12E98920DF7853008A730C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2D12E99B20DF948B008A730C /* API */,
 				2D12E98A20DF7868008A730C /* Network */,
 			);
 			path = Service;
@@ -146,6 +163,7 @@
 			children = (
 				2D12E98B20DF78C0008A730C /* NetworkRequest.swift */,
 				2D12E98D20DF78D7008A730C /* Gateway.swift */,
+				2D12E99E20DF9AB2008A730C /* URLParameterEncoder.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -156,6 +174,33 @@
 				2D12E99020DF7AE3008A730C /* Errors.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		2D12E99220DF7DF6008A730C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E99320DF7E0F008A730C /* FlickrPhotoSearchResult.swift */,
+				2D12E99520DF7E1D008A730C /* FlickrPhoto.swift */,
+				2D12E99720DF8CC2008A730C /* FlickrPhoto+Mapping.swift */,
+				2D12E99920DF8D08008A730C /* FlickrPhotoSearchResult+Mapping.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D12E99B20DF948B008A730C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E99C20DF949B008A730C /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2D12E9A020DFA2D2008A730C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2D12E9A120DFA2DF008A730C /* Dictionary.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,9 +334,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D12E99820DF8CC2008A730C /* FlickrPhoto+Mapping.swift in Sources */,
+				2D12E99F20DF9AB2008A730C /* URLParameterEncoder.swift in Sources */,
 				2D12E95E20DEACF3008A730C /* ViewController.swift in Sources */,
 				2D12E99120DF7AE3008A730C /* Errors.swift in Sources */,
+				2D12E99420DF7E0F008A730C /* FlickrPhotoSearchResult.swift in Sources */,
+				2D12E9A220DFA2DF008A730C /* Dictionary.swift in Sources */,
+				2D12E99D20DF949B008A730C /* API.swift in Sources */,
+				2D12E99A20DF8D08008A730C /* FlickrPhotoSearchResult+Mapping.swift in Sources */,
 				2D12E98C20DF78C0008A730C /* NetworkRequest.swift in Sources */,
+				2D12E99620DF7E1D008A730C /* FlickrPhoto.swift in Sources */,
 				2D12E98E20DF78D7008A730C /* Gateway.swift in Sources */,
 				2D12E95C20DEACF2008A730C /* AppDelegate.swift in Sources */,
 			);
