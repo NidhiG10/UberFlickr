@@ -20,6 +20,7 @@ enum Error: Swift.Error {
     case api(APIError)
     enum APIError {
         case noImage
+        case invalidImageData
     }
 }
 

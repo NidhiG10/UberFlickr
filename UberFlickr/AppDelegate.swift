@@ -16,7 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let apiKey = "3e7cc266ae2b0e0d78e279ce8e361736"
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let gateway: Gateway = NetworkProvider(session: URLSession(configuration: .default))
+        let api: API = FlickrAPI(gateway: gateway, apiKey: apiKey)
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        
+        let viewModel = FlickrPhotoSearchViewModel(api: api)
+        let photoSearch = photoSearchVC()
+        photoSearch.viewModel = viewModel
+        
+        navigationController.viewControllers = [photoSearch]
+        
+        window?.makeKeyAndVisible()
         return true
+    }
+    
+    fileprivate func photoSearchVC() -> FlickrPhotoSearchViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FlickrPhotoSearchViewController") as! FlickrPhotoSearchViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
