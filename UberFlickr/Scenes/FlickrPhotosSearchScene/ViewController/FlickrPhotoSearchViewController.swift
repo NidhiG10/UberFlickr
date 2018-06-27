@@ -12,7 +12,7 @@ class FlickrPhotoSearchViewController: UIViewController {
     let cellReuseIdentifier = "collectionCell"
     let loadMoreCellReuseIdentifier = "loaderCell"
     
-    var viewModel: FlickrPhotoSearchViewModel!
+    var viewModel: FlickrPhotoSearchVM!
     
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var flowLayout: UICollectionViewFlowLayout!

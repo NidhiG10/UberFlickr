@@ -34,7 +34,7 @@ extension State: Equatable {
     }
 }
 
-class FlickrPhotoSearchViewModel {
+class FlickrPhotoSearchVM {
     
     private(set) var state: State = .default {
         didSet { self.didUpdateState?(self) }
@@ -48,7 +48,7 @@ class FlickrPhotoSearchViewModel {
     
     private let searchPageCount = 50
     
-    var  didUpdateState: ((FlickrPhotoSearchViewModel) -> Void)?
+    var  didUpdateState: ((FlickrPhotoSearchVM) -> Void)?
     
     init(api: API) {
         self.api = api

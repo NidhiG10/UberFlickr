@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         window?.rootViewController = navigationController
         
-        let viewModel = FlickrPhotoSearchViewModel(api: api)
+        let viewModel = FlickrPhotoSearchVM(api: api)
         let photoSearch = photoSearchVC()
         photoSearch.viewModel = viewModel
         
