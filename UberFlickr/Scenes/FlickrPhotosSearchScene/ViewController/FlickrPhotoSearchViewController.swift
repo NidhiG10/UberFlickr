@@ -10,6 +10,8 @@ import UIKit
 
 class FlickrPhotoSearchViewController: UIViewController {
     let cellReuseIdentifier = "collectionCell"
+    let loadMoreCellReuseIdentifier = "loaderCell"
+    
     var viewModel: FlickrPhotoSearchViewModel!
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -18,7 +20,9 @@ class FlickrPhotoSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("Memory Game", comment: "Game setup controller title")   
+        title = NSLocalizedString("Memory Game", comment: "Game setup controller title")
+        
+        indicatorView.isHidden = true
         setupVMBindings()
     }
     
@@ -26,50 +30,62 @@ class FlickrPhotoSearchViewController: UIViewController {
         // Setup bindings
         
         viewModel.didUpdateState = { [weak self] vm in
-            self?.indicatorView.isHidden = (vm.state != .loadingImages)
-            if case .batchFetched = vm.state {
+            
+            var hidesActivityIndicator = true
+            var hidesCollectionView = false
+            
+            if case .loadingPhotos = vm.state {
+                hidesActivityIndicator = false
+                hidesCollectionView = true
+                self?.collectionView.contentOffset = CGPoint(x: 0, y: 0)
+            } else if case .batchFetched = vm.state {
                 self?.collectionView.reloadData()
+            } else if case let .error(error) = vm.state {
+                self?.showAlert(for: error)
+                self?.animateLoadMoreCell(animate: false)
             }
-//            if case let .error(error) = vm.state {
-//                self?.showAlert(for: error)
-//            }
+            
+            self?.indicatorView.isHidden = hidesActivityIndicator
+            self?.collectionView.isHidden = hidesCollectionView
         }
     }
     
-//    func setupColelctionViewFooterView() {
-//        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-//        spinner.startAnimating()
-//        spinner.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 44)
-//        self.collectionView.collecfoo
-//    }
+    func animateLoadMoreCell(animate: Bool) {
+        guard let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 1)) as? FlickrPhotoLoaderCell else {
+            return
+        }
+        
+        cell.isAnimating = animate
+    }
 }
 
+extension FlickrPhotoSearchViewController {
+    
+    fileprivate func showAlert(for error: Error) {
+        UIAlertController.showAlert(for: error, from: navigationController ?? self)
+    }
+}
 extension FlickrPhotoSearchViewController : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return self.viewModel.hasMoreData ? 2 : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.photos.count
+        return (section == 1) ? 1 : self.viewModel.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadMoreCellReuseIdentifier, for: indexPath) as! FlickrPhotoLoaderCell
+            cell.isAnimating = true
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! FlickrPhotoCollectionViewCell
         cell.configureCell(with: viewModel.photos[indexPath.item])
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        if kind == UICollectionElementKindSectionFooter {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter,
-                                                                             withReuseIdentifier:"SectionFooter", for: indexPath) as UICollectionReusableView
-            return headerView
-        }
-        
-            return UICollectionReusableView()
     }
     
 }
@@ -93,6 +109,10 @@ extension FlickrPhotoSearchViewController : UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.section == 1 {
+            return CGSize(width: collectionView.bounds.size.width, height: 50)
+        }
         
         let itemWidth = (collectionView.bounds.width / 3) - (2 * 5)
         return CGSize(width: itemWidth, height: itemWidth)

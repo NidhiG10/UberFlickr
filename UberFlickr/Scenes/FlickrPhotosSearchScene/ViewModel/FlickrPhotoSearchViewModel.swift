@@ -10,8 +10,9 @@ import Foundation
 
 enum State {
     case `default`
-    case loadingImages
+    case loadingPhotos
     case error(Error)
+    case loadingMorePhotos
     case batchFetched
 }
 
@@ -19,8 +20,9 @@ extension State: Equatable {
     static func == (l: State, r: State) -> Bool {
         switch (l, r) {
         case (.default, .default),
-             (.loadingImages, loadingImages),
-             (.batchFetched, batchFetched):
+             (.loadingPhotos, loadingPhotos),
+             (.batchFetched, batchFetched),
+             (.loadingMorePhotos, loadingMorePhotos):
             return true
             
         case let (.error(lDescription), .error(rDescription)):
@@ -42,7 +44,7 @@ class FlickrPhotoSearchViewModel {
     
     var photos: [FlickrPhoto] = []
     private var nextPage = 1
-    private var hasMoreData = false
+    private(set) var hasMoreData = false
     
     private let searchPageCount = 50
     
@@ -62,6 +64,12 @@ class FlickrPhotoSearchViewModel {
     }
     
     private func performInitialSearch() {
+        guard self.state != .loadingPhotos else {
+            return
+        }
+        
+        state = .loadingPhotos
+        
         // Reset
         photos = []
         nextPage = 1
@@ -77,18 +85,14 @@ class FlickrPhotoSearchViewModel {
     
     // API call to fetch Images
     private func searchPhotos(with text: String) {
-        
-        guard self.state != .loadingImages else {
-            return
-        }
-        
-        state = .loadingImages
-        
         api.searchPhotos(withText: text, page: nextPage, perPageCount: searchPageCount, success: {[weak self] (result) in
             DispatchQueue.main.async {
                 if let photos = result.photos{
                     self?.photos.append(contentsOf: photos)
                 }
+                
+                self?.nextPage += 1
+                self?.hasMoreData = result.page < result.pages
                 self?.state = .batchFetched
             }
         }) {[weak self] (error) in
@@ -99,12 +103,11 @@ class FlickrPhotoSearchViewModel {
     }
     
     func loadMorePhotos() {
-        guard self.state != .loadingImages else {
+        guard self.state != .loadingMorePhotos else {
             return
         }
         
-        nextPage += 1
-        
+        state = .loadingMorePhotos
         searchPhotos(with: self.searchText)
     }
 }
