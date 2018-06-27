@@ -8,11 +8,10 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
-    
-    // MARK: - Outlets
-    
+class FlickrPhotoCollectionViewCell: UICollectionViewCell {
+
     @IBOutlet private weak var imageView: UIImageView!
+    private var photoId : String?
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -20,9 +19,15 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(with photoInfo: FlickrPhoto) {
-        FlickrPhotoManager.sharedInstance.getImage(for: photoInfo, success: {(image) in
+        photoId = photoInfo.id ?? ""
+        
+        FlickrPhotoManager.sharedInstance.getImage(for: photoInfo, success: {[weak self] (image) in
             DispatchQueue.main.async {
-                self.imageView.image = image
+                guard self?.photoId == photoInfo.id else {
+                    return
+                }
+                
+                self?.imageView.image = image
             }
         }) { (error) in
             

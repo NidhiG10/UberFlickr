@@ -76,7 +76,7 @@ class FlickrPhotoSearchViewModel {
     }
     
     // API call to fetch Images
-    func searchPhotos(with text: String) {
+    private func searchPhotos(with text: String) {
         
         guard self.state != .loadingImages else {
             return
@@ -96,5 +96,15 @@ class FlickrPhotoSearchViewModel {
                 self?.state = .error(error)
             }
         }
+    }
+    
+    func loadMorePhotos() {
+        guard self.state != .loadingImages else {
+            return
+        }
+        
+        nextPage += 1
+        
+        searchPhotos(with: self.searchText)
     }
 }

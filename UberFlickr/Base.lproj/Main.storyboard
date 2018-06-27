@@ -15,20 +15,30 @@
             <objects>
                 <viewController storyboardIdentifier="FlickrPhotoSearchViewController" id="BYZ-38-t0r" customClass="FlickrPhotoSearchViewController" customModule="UberFlickr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TCG-qQ-Rc5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="sTX-Ny-LRU"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IHE-kf-ZWZ"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IdZ-y8-P1u">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hbb-q2-bEf">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Z1m-KU-DEO" customClass="PhotoCollectionViewCell" customModule="UberFlickr" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="Z1m-KU-DEO" customClass="FlickrPhotoCollectionViewCell" customModule="UberFlickr" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -52,26 +62,43 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionFooter" id="jqY-Ii-lZN">
+                                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3aw-9s-WDq">
+                                            <rect key="frame" x="177.5" y="15" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3aw-9s-WDq" firstAttribute="centerX" secondItem="jqY-Ii-lZN" secondAttribute="centerX" id="Dpa-93-3Sk"/>
+                                        <constraint firstItem="3aw-9s-WDq" firstAttribute="centerY" secondItem="jqY-Ii-lZN" secondAttribute="centerY" id="iQ9-nK-rAN"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="kZ0-GN-ppN"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="haQ-8g-HBk"/>
                                 </connections>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nPC-EX-GzO">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IdZ-y8-P1u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0vZ-EM-Wyv"/>
                             <constraint firstItem="nPC-EX-GzO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H2P-UH-46E"/>
                             <constraint firstItem="IdZ-y8-P1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HCZ-O8-HB3"/>
                             <constraint firstItem="IdZ-y8-P1u" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="I1V-1u-Jtr"/>
+                            <constraint firstAttribute="trailing" secondItem="TCG-qQ-Rc5" secondAttribute="trailing" id="LdH-Qw-KAw"/>
+                            <constraint firstItem="IdZ-y8-P1u" firstAttribute="top" secondItem="TCG-qQ-Rc5" secondAttribute="bottom" id="OwU-tW-P9R"/>
                             <constraint firstItem="nPC-EX-GzO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SUX-wZ-ZVU"/>
+                            <constraint firstItem="TCG-qQ-Rc5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Um9-uh-zqo"/>
+                            <constraint firstItem="TCG-qQ-Rc5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bb0-rd-flw"/>
                             <constraint firstItem="IdZ-y8-P1u" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="j9U-KN-avS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="2Hk-Lm-6Ud"/>
                     <connections>
                         <outlet property="collectionView" destination="IdZ-y8-P1u" id="wS2-Xm-JYF"/>

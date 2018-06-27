@@ -20,7 +20,6 @@ class FlickrPhotoSearchViewController: UIViewController {
         super.viewDidLoad()
         title = NSLocalizedString("Memory Game", comment: "Game setup controller title")   
         setupVMBindings()
-        self.viewModel.searchText = "hello"
     }
     
     fileprivate func setupVMBindings() {
@@ -36,6 +35,13 @@ class FlickrPhotoSearchViewController: UIViewController {
 //            }
         }
     }
+    
+//    func setupColelctionViewFooterView() {
+//        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+//        spinner.startAnimating()
+//        spinner.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 44)
+//        self.collectionView.collecfoo
+//    }
 }
 
 extension FlickrPhotoSearchViewController : UICollectionViewDataSource {
@@ -50,10 +56,22 @@ extension FlickrPhotoSearchViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! FlickrPhotoCollectionViewCell
         cell.configureCell(with: viewModel.photos[indexPath.item])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionFooter {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter,
+                                                                             withReuseIdentifier:"SectionFooter", for: indexPath) as UICollectionReusableView
+            return headerView
+        }
+        
+            return UICollectionReusableView()
+    }
+    
 }
 
 extension FlickrPhotoSearchViewController : UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -78,5 +96,34 @@ extension FlickrPhotoSearchViewController : UICollectionViewDelegate, UICollecti
         
         let itemWidth = (collectionView.bounds.width / 3) - (2 * 5)
         return CGSize(width: itemWidth, height: itemWidth)
+    }
+}
+
+extension FlickrPhotoSearchViewController : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // calculates where the user is in the y-axis
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if self.viewModel.photos.count > 0 && offsetY > contentHeight - scrollView.frame.size.height {
+            
+            // call your API for more data
+            self.viewModel.loadMorePhotos()
+        }
+    }
+}
+
+extension FlickrPhotoSearchViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        if let query = searchBar.text, !query.isEmpty {
+            self.viewModel.searchText = query
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
