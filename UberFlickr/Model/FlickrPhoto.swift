@@ -19,3 +19,8 @@ struct FlickrPhoto {
     var server: String?
 }
 
+extension FlickrPhoto : Equatable {
+    static func == (lhs: FlickrPhoto, rhs: FlickrPhoto) -> Bool {
+        return lhs.id == rhs.id && lhs.secret == rhs.secret
+    }
+}

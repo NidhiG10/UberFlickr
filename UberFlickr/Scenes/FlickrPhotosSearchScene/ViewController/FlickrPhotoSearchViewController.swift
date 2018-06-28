@@ -14,9 +14,9 @@ class FlickrPhotoSearchViewController: UIViewController {
     
     var viewModel: FlickrPhotoSearchVM!
     
-    @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var flowLayout: UICollectionViewFlowLayout!
-    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet private(set) weak var collectionView: UICollectionView!
+    @IBOutlet private(set) weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet private(set) weak var indicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

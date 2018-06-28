@@ -29,6 +29,14 @@
 		2D12E9B220E2B8B7008A730C /* FlickrPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E9B120E2B8B7008A730C /* FlickrPhotoManager.swift */; };
 		2D12E9FD20E3F8CC008A730C /* FlickrPhotoLoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E9FC20E3F8CC008A730C /* FlickrPhotoLoaderCell.swift */; };
 		2D12E9FF20E410D2008A730C /* UIAlertController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12E9FE20E410D2008A730C /* UIAlertController++.swift */; };
+		2D12EA0720E41F30008A730C /* APIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA0420E41F21008A730C /* APIMock.swift */; };
+		2D12EA0820E41F36008A730C /* FlickrPhotoSearchVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA0220E41EEC008A730C /* FlickrPhotoSearchVMTest.swift */; };
+		2D12EA0920E41F3A008A730C /* FlickrPhotoSearchVMMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA0020E41EDB008A730C /* FlickrPhotoSearchVMMock.swift */; };
+		2D12EA1120E42458008A730C /* FlickrPhotoSearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA1020E42458008A730C /* FlickrPhotoSearchViewControllerTests.swift */; };
+		2D12EA1720E4C300008A730C /* GatewayMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA0A20E41F86008A730C /* GatewayMock.swift */; };
+		2D12EA1820E4C30F008A730C /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA0D20E41FEC008A730C /* URLSessionMock.swift */; };
+		2D12EA1920E4C31C008A730C /* GatewayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA1220E4B757008A730C /* GatewayTests.swift */; };
+		2D12EA1C20E4C3B8008A730C /* ApplicationNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12EA1B20E4C3B8008A730C /* ApplicationNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,14 @@
 		2D12E9B120E2B8B7008A730C /* FlickrPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoManager.swift; sourceTree = "<group>"; };
 		2D12E9FC20E3F8CC008A730C /* FlickrPhotoLoaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoLoaderCell.swift; sourceTree = "<group>"; };
 		2D12E9FE20E410D2008A730C /* UIAlertController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController++.swift"; sourceTree = "<group>"; };
+		2D12EA0020E41EDB008A730C /* FlickrPhotoSearchVMMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoSearchVMMock.swift; sourceTree = "<group>"; };
+		2D12EA0220E41EEC008A730C /* FlickrPhotoSearchVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoSearchVMTest.swift; sourceTree = "<group>"; };
+		2D12EA0420E41F21008A730C /* APIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMock.swift; sourceTree = "<group>"; };
+		2D12EA0A20E41F86008A730C /* GatewayMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayMock.swift; sourceTree = "<group>"; };
+		2D12EA0D20E41FEC008A730C /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		2D12EA1020E42458008A730C /* FlickrPhotoSearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoSearchViewControllerTests.swift; sourceTree = "<group>"; };
+		2D12EA1220E4B757008A730C /* GatewayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayTests.swift; sourceTree = "<group>"; };
+		2D12EA1B20E4C3B8008A730C /* ApplicationNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,7 @@
 		2D12E95A20DEACF2008A730C /* UberFlickr */ = {
 			isa = PBXGroup;
 			children = (
+				2D12EA1A20E4C3AE008A730C /* AppNavigation */,
 				2D12E9A320DFB928008A730C /* Scenes */,
 				2D12E9A020DFA2D2008A730C /* Extension */,
 				2D12E99220DF7DF6008A730C /* Model */,
@@ -172,8 +189,8 @@
 		2D12E98A20DF7868008A730C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2D12EA1520E4C2F4008A730C /* Gateway */,
 				2D12E98B20DF78C0008A730C /* NetworkRequest.swift */,
-				2D12E98D20DF78D7008A730C /* Gateway.swift */,
 				2D12E99E20DF9AB2008A730C /* URLParameterEncoder.swift */,
 			);
 			path = Network;
@@ -202,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				2D12E99C20DF949B008A730C /* API.swift */,
+				2D12EA0420E41F21008A730C /* APIMock.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -237,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				2D12E9A520DFB95D008A730C /* FlickrPhotoSearchViewController.swift */,
+				2D12EA1020E42458008A730C /* FlickrPhotoSearchViewControllerTests.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -245,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				2D12E9A920DFB9B6008A730C /* FlickrPhotoSearchVM.swift */,
+				2D12EA0020E41EDB008A730C /* FlickrPhotoSearchVMMock.swift */,
+				2D12EA0220E41EEC008A730C /* FlickrPhotoSearchVMTest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -264,6 +285,25 @@
 				2D12E9B120E2B8B7008A730C /* FlickrPhotoManager.swift */,
 			);
 			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		2D12EA1520E4C2F4008A730C /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+				2D12EA0D20E41FEC008A730C /* URLSessionMock.swift */,
+				2D12E98D20DF78D7008A730C /* Gateway.swift */,
+				2D12EA1220E4B757008A730C /* GatewayTests.swift */,
+				2D12EA0A20E41F86008A730C /* GatewayMock.swift */,
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
+		2D12EA1A20E4C3AE008A730C /* AppNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				2D12EA1B20E4C3B8008A730C /* ApplicationNavigation.swift */,
+			);
+			path = AppNavigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D12EA1820E4C30F008A730C /* URLSessionMock.swift in Sources */,
 				2D12E99820DF8CC2008A730C /* FlickrPhoto+Mapping.swift in Sources */,
+				2D12EA1C20E4C3B8008A730C /* ApplicationNavigation.swift in Sources */,
 				2D12E99F20DF9AB2008A730C /* URLParameterEncoder.swift in Sources */,
 				2D12E9FD20E3F8CC008A730C /* FlickrPhotoLoaderCell.swift in Sources */,
 				2D12E9FF20E410D2008A730C /* UIAlertController++.swift in Sources */,
@@ -413,6 +455,7 @@
 				2D12E9AD20DFCAAE008A730C /* FlickrPhotoCollectionViewCell.swift in Sources */,
 				2D12E98E20DF78D7008A730C /* Gateway.swift in Sources */,
 				2D12E9A620DFB95D008A730C /* FlickrPhotoSearchViewController.swift in Sources */,
+				2D12EA1720E4C300008A730C /* GatewayMock.swift in Sources */,
 				2D12E95C20DEACF2008A730C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +464,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D12EA0920E41F3A008A730C /* FlickrPhotoSearchVMMock.swift in Sources */,
+				2D12EA0820E41F36008A730C /* FlickrPhotoSearchVMTest.swift in Sources */,
+				2D12EA1920E4C31C008A730C /* GatewayTests.swift in Sources */,
+				2D12EA1120E42458008A730C /* FlickrPhotoSearchViewControllerTests.swift in Sources */,
+				2D12EA0720E41F30008A730C /* APIMock.swift in Sources */,
 				2D12E97120DEACF5008A730C /* UberFlickrTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

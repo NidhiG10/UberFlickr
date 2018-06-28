@@ -45,8 +45,7 @@ class FlickrPhotoSearchVM {
     var photos: [FlickrPhoto] = []
     private var nextPage = 1
     private(set) var hasMoreData = false
-    
-    private let searchPageCount = 50
+    private let searchPageCount = 99
     
     var  didUpdateState: ((FlickrPhotoSearchVM) -> Void)?
     

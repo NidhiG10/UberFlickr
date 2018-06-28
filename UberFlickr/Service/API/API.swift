@@ -46,15 +46,15 @@ struct FlickrAPI : API {
             url: String(format: "https://api.flickr.com/services/rest/"), parameters: parameters
         )
         
-        let _ = self.gateway.makeRequest(request: request, success: {(data) in
+        let _ = self.gateway.makeJSONRequest(request: request, success: {(json) in
             
-            self.parse(data: data, success: success, failure: failure)
+            self.parse(json: json, success: success, failure: failure)
             
         }, failure: failure)
     }
     
     /// Parses response JSON to array of image to <count> URLs
-    fileprivate func parse(data: Data, success: (FlickrPhotoSearchResult) -> Void, failure: (Error) -> Void) {
+    fileprivate func parse(json: [String: Any], success: (FlickrPhotoSearchResult) -> Void, failure: (Error) -> Void) {
         // get array of tracks
 //        guard
 //            let tracks = json["tracks"].array,
@@ -64,16 +64,10 @@ struct FlickrAPI : API {
 //            return
 //        }
         
-        do {
-            if let todoJSON = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                let photoSearchResult = FlickrPhotoSearchResult.entity(withDictionary: todoJSON) {
-                success(photoSearchResult)
-            } else {
-                failure(Error.api(.noImage))
-            }
-        } catch {
+        if let photoSearchResult = FlickrPhotoSearchResult.entity(withDictionary: json) {
+            success(photoSearchResult)
+        } else {
             failure(Error.api(.noImage))
-            return
         }
     }
 }

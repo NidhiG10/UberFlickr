@@ -17,6 +17,7 @@ protocol Gateway {
     init(session: URLSession)
     
     func makeRequest(request: NetworkRequest, success: ((Data) -> Void)?, failure: ((Error) -> Void)?) -> NetworkCancelable?
+    func makeJSONRequest(request: NetworkRequest, success: (([String: Any]) -> Void)?, failure: ((Error) -> Void)?) -> NetworkCancelable?
 }
 
 extension Gateway {
@@ -50,5 +51,19 @@ class NetworkProvider: Gateway {
         }
         task.resume()
         return task
+    }
+    
+    func makeJSONRequest(request: NetworkRequest, success: (([String: Any]) -> Void)?, failure: ((Error) -> Void)?) -> NetworkCancelable? {
+        return makeRequest(request: request, success: { (data) in
+            do {
+                if let todoJSON = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    success?(todoJSON)
+                } else {
+                    failure?(Error.gateway(.invalidJSON))
+                }
+            } catch {
+                failure?(Error.gateway(.invalidJSON))
+            }
+        }, failure: failure)
     }
 }
