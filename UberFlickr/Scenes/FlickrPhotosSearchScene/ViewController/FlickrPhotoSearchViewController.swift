@@ -20,7 +20,7 @@ class FlickrPhotoSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("Memory Game", comment: "Game setup controller title")
+        title = NSLocalizedString("Photos", comment: "Flickr setup controller title")
         
         indicatorView.isHidden = true
         setupVMBindings()
